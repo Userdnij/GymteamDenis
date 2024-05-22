@@ -2,9 +2,11 @@
 
 import React, { useEffect, useState } from 'react';
 // import { QrReader } from 'react-qr-reader';
-import { Scanner } from '@yudiel/react-qr-scanner';
+import dynamic from 'next/dynamic';
+
 import axios from 'axios';
 
+const Scanner = dynamic(() => import('@yudiel/react-qr-scanner'), { ssr: false });
 
 export default function QR() {
     const [res, setRes] = useState();

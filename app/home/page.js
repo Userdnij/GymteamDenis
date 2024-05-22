@@ -9,7 +9,11 @@ import Link from "next/link";
 
 export default function Home() {
     const [news, setNews] = useState([]);
-    const isMobile = window.innerWidth < 768;
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 768);
+    }, [])
 
     const fetchNews = async () => {
         axios.get('/api/news/get')
