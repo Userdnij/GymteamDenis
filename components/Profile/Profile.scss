@@ -1,0 +1,24 @@
+.Profile {
+    margin-left: 50px;
+    height: 100%;
+    @media (max-width: 768px) {
+        margin-left: 20px;
+    }
+    &-Info {
+        background-color: #fff;
+        border: 2px solid #F3F4F5;
+        padding: 50px;
+    }
+
+    &-Change {
+        background-color: #fff;
+        border: 2px solid #F3F4F5;
+        padding: 50px;
+        display: none;
+        max-height: 100%;
+
+        &_isActive {
+            display: block;
+        }
+    }
+}

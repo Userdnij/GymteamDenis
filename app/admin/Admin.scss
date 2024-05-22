@@ -1,0 +1,14 @@
+.Admin {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+
+    &-SideBar {
+        width: 20%;
+    }
+
+    &-Content {
+        width: 80%;
+    }
+}

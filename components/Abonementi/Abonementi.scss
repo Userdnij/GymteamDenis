@@ -1,0 +1,41 @@
+.Abonementi {
+    margin-left: 50px;
+    height: 100%;
+
+    &-Info {
+        background-color: #fff;
+        line-height: 48px;
+        font-weight: 500;
+        font-size: 24px;
+        border: 2px solid #F3F4F5;
+        padding: 50px;
+    }
+
+    &-QR {
+        background-color: #fff;
+        margin-top: 50px;
+        border: 2px solid #F3F4F5;
+        padding: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        margin-left: 20px;
+
+        &-Info {
+            font-size: 18px;
+            padding: 20px;
+        }
+
+        &-QR {
+            & Button{
+                margin-bottom: 20px;
+            }
+            margin-top: 20px;
+            padding: 20px;
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.AdminSidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 20%;
+    height: 100%;
+    background-color: #4F46E5;
+    position: fixed;
+    border-right: 2px solid #b0acff;
+
+    &-Wrapper {
+        width: 20%;
+    }
+
+    &-Title {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    &-Link {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: rgb(228, 228, 228);
+        font-weight: 600;
+        font-size: 20px;
+        width: 80%;
+        padding-inline: 20px;
+        padding-block: 10px;
+        transition: 0.3s;
+
+        &_selected {
+            color: white;
+            background-color: #6a63ec;
+            border-radius: 15px;
+        }
+
+        &:hover:not(&_selected) {
+            color: white;
+            background-color: #3A32E5;
+            border-radius: 15px;
+        }
+    }
+}

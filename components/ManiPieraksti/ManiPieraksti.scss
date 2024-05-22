@@ -1,0 +1,35 @@
+.ManiPieraksti {
+    padding-left: 50px;
+
+    &-Table {
+        background-color: #fff; 
+        width: 100%;
+        text-align: center;
+
+        border: 1px solid black;
+
+        & tr {
+            border: 2px solid #F3F4F5;
+            height: 80px;
+        }
+    }
+
+    &-Header {
+        border: 4px solid #65b1fd;
+        background-color: #9dcdfd;
+    }
+
+    &-Item {
+        display: flex;
+        flex-direction: row;
+        border: 2px solid #F3F4F5;
+        padding: 20px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    &-Button {
+        border: 1px solid red;
+
+    }
+}

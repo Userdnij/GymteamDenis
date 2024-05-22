@@ -1,0 +1,33 @@
+.HomeHeader {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 25px;
+    padding-inline: 100px;
+    align-items: center;
+
+    &-Title {
+        font-size: 30px;
+        font-weight: 800;
+    }
+
+    &-Left {
+        margin-left: 50px;
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+    }
+
+    &-Right {
+        margin-left: auto;
+    }
+
+    &-Link {
+        transition: 0.3s;
+        &:hover {
+            color: rgb(172, 219, 237);
+        }
+    }
+}

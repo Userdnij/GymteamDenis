@@ -1,0 +1,22 @@
+.MansGrafiks {
+    padding-inline: 50px;
+
+    &-Event {
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: #3976b3;
+        }
+
+        &_Busy {
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: #b95454;
+
+            &:hover {
+                background-color: #b33939;
+            }
+        }
+    }
+}
