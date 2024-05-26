@@ -4,7 +4,8 @@ export const publicRoutes = [
   '/',
   '/kontakts',
   '/login',
-  '/signup'
+  '/signup',
+  '/QR'
 ]
 
 export const adminRoutes = [

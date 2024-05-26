@@ -46,7 +46,7 @@ export default function Home() {
 
         return news.map((news, index) => {
             return (
-                <div key={index} className="HomePage-News">
+                <div key={index} className="HomePage-News" style={{boxShadow: "gray 1px 1px 10px 1px"}}>
                     <h1 className="text-center font-semibold text-xl mb-5">{news.title}</h1>
                     <p dangerouslySetInnerHTML={{ __html: renderNewsText(news.text) }} />
                     {/* <p>{news.text}</p> */}

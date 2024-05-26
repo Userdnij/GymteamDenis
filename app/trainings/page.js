@@ -159,7 +159,7 @@ export default function Trainings() {
 
   const renderCalendar = () => {
     return (
-      <div style={!selectedTrainer ? {opacity: '0'} : {opacity: '1'}} className="text-center">
+      <div style={!selectedTrainer ? {opacity: '0'} : {opacity: '1'}} className="text-center mt-20">
         <button className="Button mb-10" onClick={() => setSelectedTrainer(null)}>Atpakaļ</button>
         <h1 className="text-3xl font-semibold mb-5">{selectedTrainer?.vards + ' ' + selectedTrainer?.uzvards}</h1>
         <div ref={calendarEl} className={`ml-auto mr-auto w-4/6 h-4/6`} style={{backgroundColor: "white", padding: "20px"}}></div>
@@ -177,9 +177,8 @@ export default function Trainings() {
       <div className="flex justify-center mt-20">
               <ul role="list" className="divide-y divide-gray-100 grid grid-cols-2 gap-4">
                   {trainers.map((person) => (
-                      <li key={person.email} className="flex justify-between gap-x-6 py-5 max-w-96 mr-40">
+                      <li key={person.email} className="flex justify-between gap-x-6 py-5 px-5 max-w-100 mr-40" style={{backgroundColor: "white", borderRadius: "15px", alignItems: "center", boxShadow: "gray 1px 1px 10px 1px"}}>
                           <div className="flex min-w-0 gap-x-4">
-                              <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={person.imageUrl} alt="" />
                               <div className="min-w-0 flex-auto">
                               <p className="text-sm font-semibold leading-6 text-gray-900">{person.vards + ' ' + person.uzvards}</p>
                               <p className="mt-1 truncate text-xs leading-5 text-gray-500">{person.email + ' | ' + person.talrunis}</p>

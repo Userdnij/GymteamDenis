@@ -8,7 +8,6 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import axios from "axios";
-import Cookies from 'js-cookie';
 import {useRouter} from "next/navigation";
 
 const products = [
@@ -21,6 +20,7 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const user = JSON.parse(localStorage.getItem('user'));
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -105,6 +105,9 @@ export default function Header() {
           <a href="/kontakti" className="text-sm font-semibold leading-6 text-gray-900" style={ { fontSize: '20px' } }>
             Kontakti
           </a>
+          {user.role === 'admin' && ( <a href="/admin" className="text-sm font-semibold leading-6 text-gray-900" style={ { fontSize: '20px' } }>
+            Admin
+          </a> )}
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button

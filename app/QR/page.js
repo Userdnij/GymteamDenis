@@ -1,13 +1,16 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-// import { QrReader } from 'react-qr-reader';
 import dynamic from 'next/dynamic';
+
 
 import axios from 'axios';
 
-const Scanner = dynamic(() => import('@yudiel/react-qr-scanner'), { ssr: false });
+// import { Scanner } from '@yudiel/react-qr-scanner';
+// const Scanner = dynamic(() => import('@yudiel/react-qr-scanner'), { ssr: false });
 
+// const Scanner = dynamic(() => import('@yudiel/react-qr-scanner').then(mod => mod.default), { ssr: false });
+const Scanner = dynamic(() => import('@yudiel/react-qr-scanner').then(mod => mod.Scanner), { ssr: false });
 export default function QR() {
     const [res, setRes] = useState();
     const handleResult = (result) => {
