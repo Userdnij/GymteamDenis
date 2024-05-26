@@ -22,7 +22,11 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    setUser(JSON.parse(window.localStorage.getItem('user')))
+  }, [])
   const router = useRouter()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -37,7 +41,7 @@ export default function Header() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem('user') === null) {
+    if (window.localStorage.getItem('user') === null) {
       logout();
     }
   }, []);
@@ -107,7 +111,7 @@ export default function Header() {
           <a href="/kontakti" className="text-sm font-semibold leading-6 text-gray-900" style={ { fontSize: '20px' } }>
             Kontakti
           </a>
-          {user.role === 'admin' && ( <a href="/admin" className="text-sm font-semibold leading-6 text-gray-900" style={ { fontSize: '20px' } }>
+          {user?.role === 'admin' && ( <a href="/admin" className="text-sm font-semibold leading-6 text-gray-900" style={ { fontSize: '20px' } }>
             Admin
           </a> )}
         </Popover.Group>
