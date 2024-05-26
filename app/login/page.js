@@ -20,7 +20,7 @@ export default function SignupPage() {
             .then((response) => {
                 console.log(response.data);
                 router.push("/home");
-                localStorage.setItem("user", JSON.stringify(response.data.user));
+                window.localStorage.setItem("user", JSON.stringify(response.data.user));
             }).catch((error) => {
                 setError(error.response.data.error);
                 console.log(error.response.data.error);

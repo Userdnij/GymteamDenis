@@ -23,13 +23,13 @@ export default function ProfilePage() {
     const [user, setUser] = useState({});
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(window.localStorage.getItem('user'));
 
         axios.get('/api/users/getById?id=' + user._id)
             .then((res) => {
                 console.log(res.data)
                 setUser(res.data.user);
-                localStorage.setItem('user', JSON.stringify(res.data.user));
+                window.localStorage.setItem('user', JSON.stringify(res.data.user));
             }).catch((err) => {
                 console.log(err)
             });

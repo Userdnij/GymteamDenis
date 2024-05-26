@@ -25,7 +25,7 @@ export const SubscribeTraining = ({open, setOpen, event, handleSubmit}) => {
   const onSubscribeSubmit = () => {
     axios.post('/api/trainings/subscribe', {
         trainingId: event.id,
-        clientId: JSON.parse(localStorage.getItem('user'))._id
+        clientId: JSON.parse(window.localStorage.getItem('user'))._id
     }).then((response) => {
         console.log(response.data)
         setOpen(false);

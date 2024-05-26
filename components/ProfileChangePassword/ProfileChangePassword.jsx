@@ -14,7 +14,7 @@ export const ProfileChangePassword = () => {
     const logout = async () => {
         try {
             await axios.get('/api/users/logout');
-            localStorage.removeItem('user');
+            window.localStorage.removeItem('user');
             router.push('/login')
         } catch (error) {
             console.log(error.message)
@@ -28,7 +28,7 @@ export const ProfileChangePassword = () => {
         }
 
         axios.post('/api/users/change/password', {
-            email: JSON.parse(localStorage.getItem('user')).email,
+            email: JSON.parse(window.localStorage.getItem('user')).email,
             oldPassword: form.oldPassword,
             newPassword: form.newPassword,
         }).then((res) => {

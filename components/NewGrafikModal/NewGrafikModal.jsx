@@ -15,7 +15,7 @@ export const NewGrafikModal = ({open, setOpen, submit}) => {
   const [price, setPrice] = useState(0);
 
   const handleSubmit = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(window.localStorage.getItem('user'));
     axios.post('/api/trainings/create', {
       date: date,
       startTime: startTime,

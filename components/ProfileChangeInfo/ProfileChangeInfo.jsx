@@ -16,7 +16,7 @@ export const ProfileChangeInfo = ({ user }) => {
     const logout = async () => {
         try {
             await axios.get('/api/users/logout');
-            localStorage.removeItem('user');
+            window.localStorage.removeItem('user');
             router.push('/login')
         } catch (error) {
             console.log(error.message)
@@ -52,7 +52,7 @@ export const ProfileChangeInfo = ({ user }) => {
         }
 
         axios.post('/api/users/change/info', {
-            oldEmail: JSON.parse(localStorage.getItem('user')).email,
+            oldEmail: JSON.parse(window.localStorage.getItem('user')).email,
             newEmail: form.email,
             vards: form.vards,
             uzvards: form.uzvards,

@@ -33,7 +33,7 @@ export default function Header() {
   const logout = async () => {
     try {
         await axios.get('/api/users/logout');
-        localStorage.removeItem('user');
+        window.localStorage.removeItem('user');
         router.push('/login')
     } catch (error) {
         console.log(error.message)

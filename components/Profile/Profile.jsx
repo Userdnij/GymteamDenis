@@ -9,7 +9,7 @@ export const Profile = () => {
     const [isChangeInfoActive, setIsChangeInfoActive] = useState(false);
 
     useEffect(() => {
-        const user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(window.localStorage.getItem('user'));
         console.log(user);
         setUser(user);
     }, []);

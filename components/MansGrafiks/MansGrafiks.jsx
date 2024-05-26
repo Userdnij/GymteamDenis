@@ -92,7 +92,7 @@ export const MansGrafiks = () => {
 
         calendarInstance.current.removeAllEvents();
 
-        const user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(window.localStorage.getItem('user'));
         axios.get(`/api/trainings/get?trener=${user._id}`)
             .then((response) => {
                 const { trainings } = response.data;
@@ -142,7 +142,7 @@ export const MansGrafiks = () => {
     }
 
     const submitAddEvent = (training) => {
-        const user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(window.localStorage.getItem('user'));
         const trenerName = `${user.vards} ${user.uzvards}`;
 
         addEvent({

@@ -5,7 +5,7 @@ import './ManiPieraksti.scss';
 
 export default function ManiPieraksti() {
     const [trainings, setTrainings] = useState([]);
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(window.localStorage.getItem('user'));
 
     useEffect(() => {
         fetchTrainings();

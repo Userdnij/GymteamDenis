@@ -5,7 +5,7 @@ import AbonementExtendModal from '../AbonementExtendModal/AbonementExtendModal';
 
 export const Abonementi = () => {
     // const [user, setUser] = useState();
-    const user = JSON.parse(localStorage.getItem('user'))
+    const user = JSON.parse(window.localStorage.getItem('user'))
     const [qr, setQr] = useState({
         email: user?.email,
         date: new Date(),
