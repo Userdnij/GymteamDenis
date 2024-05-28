@@ -11,8 +11,8 @@ export async function GET(request){
         const response = NextResponse.json({
             news: news
         });
-        
-        response.setHeader('Cache-Control', 'no-store');
+
+response.headers.set('Cache-Control', 'no-store');
         return response;
     } catch (error) {
         console.log(error)
