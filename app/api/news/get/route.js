@@ -12,7 +12,7 @@ export async function GET(request){
             news: news
         });
 
-response.headers.set('Cache-Control', 'no-store');
+        response.headers.set('cache', 'no-store');
         return response;
     } catch (error) {
         console.log(error)
