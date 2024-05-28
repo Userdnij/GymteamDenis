@@ -17,7 +17,7 @@ export default function Home() {
 
     const fetchNews = async () => {
         axios.get('/api/news/get', {
-            fetchPolicy: 'network-only'
+            cache: 'no-store'
         })
         .then((res) => {
             setNews(res.data.news);
