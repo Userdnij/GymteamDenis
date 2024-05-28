@@ -94,6 +94,7 @@ export default function AdminNewsTab() {
     }
 
     const renderNewsText = (text) => {
+        if (!text) return '';
         return text.replace(/\n/g, '<br />');
     }
 

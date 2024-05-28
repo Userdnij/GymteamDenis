@@ -7,7 +7,8 @@ export default function ManuTreninuVesture() {
     const [trainings, setTrainings] = useState([]);
 
     useEffect(() => {
-        axios.get(`/api/trainings/get?client=6626a7b9d72a626306221f8f&history=true`)
+        const user = JSON.parse(window.localStorage.getItem('user'));
+        axios.get(`/api/trainings/get?client=${user._id}&history=true`)
             .then(res => {
                 console.log(res.data);
                 setTrainings(res.data.trainings);

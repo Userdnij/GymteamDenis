@@ -50,8 +50,9 @@ export default function AdminNewsEdit({ item, handleSubmit }) {
     const handleSubmitCreate = () => {
         if (!item._id) {
             createAbonement();
+        } else {
+            editAbonement();    
         }
-        editAbonement();
     }
 
     return (
