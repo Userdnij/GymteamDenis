@@ -5,7 +5,6 @@ export const publicRoutes = [
   '/kontakts',
   '/login',
   '/signup',
-  '/QR'
 ]
 
 export const adminRoutes = [
@@ -18,18 +17,20 @@ export async function middleware(request) {
     const role = request.cookies.get('gym_role')?.value
     const is_locked = request.cookies.get('gym_is_locked')?.value === 'true';
 
-    if(is_locked && pathname !== '/banned') {
-      return NextResponse.redirect(new URL('/banned', request.url))
-    }
+    if (pathname !== '/qr' && pathname !== '/QR') {
+      if(is_locked && pathname !== '/banned') {
+        return NextResponse.redirect(new URL('/banned', request.url))
+      }
 
-    if (!userId && !publicRoutes.includes(pathname)) {
-      return NextResponse.redirect(new URL('/login', request.url))
-    }
-    if (userId && publicRoutes.includes(pathname)) {
-      return NextResponse.redirect(new URL('/home', request.url))
-    }
-    if (role === 'user' && adminRoutes.includes(pathname)) {
-      return NextResponse.redirect(new URL('/home', request.url))
+      if (!userId && !publicRoutes.includes(pathname)) {
+        return NextResponse.redirect(new URL('/login', request.url))
+      }
+      if (userId && publicRoutes.includes(pathname)) {
+        return NextResponse.redirect(new URL('/home', request.url))
+      }
+      if (role === 'user' && adminRoutes.includes(pathname)) {
+        return NextResponse.redirect(new URL('/home', request.url))
+      }
     }
 }
 
